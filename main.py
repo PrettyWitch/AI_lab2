@@ -101,12 +101,12 @@ class Fruit:
             self.model2.removeRow(num)
 
         for num in range(1, len(num_list)):
-            name1 = values[num][1]
-            name2 = values[num + 1][1]
+            name1 = values[num_list[num - 1]][1]
+            name2 = values[num_list[num]][1]
             name = name1 + "-" + name2
             print(name)
-            value1 = values[num]
-            value2 = values[num + 1]
+            value1 = values[num_list[num - 1]]
+            value2 = values[num_list[num]]
             fruit1 = utils.tra(value1, value2)
             # print(value1, value2)
             fruit2 = utils.tra2(value2)
@@ -115,7 +115,7 @@ class Fruit:
             Euclidean = utils.Euclidean(fruit1, fruit2)
             Manhattan = utils.Manhattan(fruit1, fruit2)
             Cosine = utils.Cosine(fruit1, fruit2)
-            disNode = utils.disNode(fruit1, fruit2)
+            disNode = utils.disNode(fruit1[2], fruit2[2])
             PearsonCorrelation = utils.PearsonCorrelation(fruit1, fruit2)
             # distance
             disValue = [name, Euclidean, Manhattan, Cosine, disNode, PearsonCorrelation]
