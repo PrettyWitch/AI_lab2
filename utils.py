@@ -85,7 +85,7 @@ def disNode(a, b):
         else:
             break
     affinity = len(arr1) + len(arr2) - temp * 2 - 1
-    return affinity
+    return math.fabs(affinity)
 
 
 def PearsonCorrelation(xData, yData):
